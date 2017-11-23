@@ -1,0 +1,146 @@
+.container2 {
+height: 170px;
+width: 2000px;
+background-color:#ebebeb;
+padding-top: -20px;
+margin-top: -20px;
+padding-left: 150px;
+ font-family: 'Roboto', Georgia, sans-serif;
+}
+
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float:none;
+  width:150px;
+  height:150px;
+}
+
+.container3 {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+
+
+body {
+padding-top: 15px;
+font-size: 12px;
+background-color:#ebebeb;
+}
+
+
+}
+.container {
+  background: #fff;
+}
+
+
+.main {
+max-width: 320px;
+margin: 0 auto;
+
+
+}
+
+.maintext {
+  margin: 0 auto;
+  margin-top: 10px;
+  padding-top: 10px;
+
+}
+
+.login-or {
+position: relative;
+font-size: 18px;
+color: #aaa;
+margin-top: 10px;
+       margin-bottom: 10px;
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+
+.span-or {
+display: block;
+position: absolute;
+left: 50%;
+top: -2px;
+margin-left: -25px;
+background-color: #fff;
+width: 50px;
+text-align: center;
+}
+
+
+.hr-or {
+background-color: #cdcdcd;
+height: 1px;
+margin-top: 0px !important;
+margin-bottom: 0px !important;
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 80px;
+
+
+
+
+}
+h2 {
+  text-align:center;
+  margin-top: 40px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 50px;
+
+
+}
+h3 {
+text-align: center;
+line-height: 300%;
+}
+
+
+hr.style-one {
+ border: 0;
+ height: 2px;
+ background: #333;
+ background-image: linear-gradient(to right, #ccc, #333, #ccc);
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
+
+.btn-info {
+  background-color: #cf4332;
+}
+
+
+.footer {
+  padding-top: 45px;
+  margin-top: 150px;
+  background-color: #1b1b1b;
+  background-image: -moz-linear-gradient(top, #222222, #111111);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+  background-image: -webkit-linear-gradient(top, #222222, #111111);
+  background-image: -o-linear-gradient(top, #222222, #111111);
+  background-image: linear-gradient(to bottom, #222222, #111111);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+  height: 45px;
+}
+
+.error {
+  width:92%
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color : #a94442;
+  background: #f2dede;
+  border-radius 5px;
+  text-align:left;
+}
