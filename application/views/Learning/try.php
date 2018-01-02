@@ -1,10 +1,12 @@
 
+<link href ="<?php echo base_url('assets/css/bootstrap.min.css') ?>"  rel="stylesheet");  >
+<link href ="<?php echo base_url('assets/css/main.css') ?>"  rel="stylesheet");  >
 
 
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container-fluid">
    <div class="navbar-header">
-     <a class="navbar-brand" href="#">Learning Resource Platform</a>
+     <a class="navbar-brand" href="">Learning Resource Platform</a>
    </div>
 
   </div>
@@ -36,6 +38,9 @@
     </div>
   </div>
     <div class="main">
+
+
+
       <h3>Log In to your Account Using</h3>
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6">
@@ -50,16 +55,23 @@
         <span class="span-or">or</span>
       </div>
 
-      <form role="form" method="post" action="server.php">
+      <form role="form" method="post">
+
+        <?php if(isset($_SESSION['Success'])){ ?>
+          <div class ="alert alert-success"> <?php echo $_SESSION ['Success']; ?> </div>
+          <?php
+        } ?>
+          <?php echo validation_errors('<div class ="alert alert-danger">', '</div>'); ?>
+
         <div class="form-group">
-          <label for="inputUsernameEmail"><strong>Username or email</strong></label>
+          <label for="inputUsernameEmail">Username or email</label>
           <input type="text" class="form-control" id="username" name="username">
 
         </div>
 
         <div class="form-group">
           <a class="pull-right" href="#">Forgot password?</a>
-          <label for="inputPassword"><strong>Password</strong></label>
+          <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="password" name="password">
         </div>
 
@@ -69,7 +81,7 @@
             Remember me </label>
         </div>
 
-          <button type="submit" name="login" class="btn btn btn-primary">
+          <button name="login" class="btn btn btn-primary">
             Log In
           </button>
       </form>
@@ -79,5 +91,3 @@
   </div>
 </div>
 </div>
-
-
