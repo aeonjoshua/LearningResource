@@ -22,16 +22,15 @@ class Learning extends CI_Controller {
 
 
 
-
-
 		public function register()
 		{
 				if($_SERVER['REQUEST_METHOD']=='POST'){
 
-					$this->form_validation->set_rules('username', 'Username', 'required');
-					$this->form_validation->set_rules('email', 'Email', 'required');
+					$this->form_validation->set_rules('username', 'Username', 'required') ;
+					$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]', array('required'=>'You must provide a valid email address'));
 					$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
 					$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[4]|matches[password]');
+
 
 					if ($this->form_validation->run()== TRUE){
 						echo 'Form Validated';
@@ -64,12 +63,22 @@ class Learning extends CI_Controller {
 	}
 
 
-	public function login()
-
+	public function mainnn()
 	{
 
-			$this->form_validation->set_rules('username', 'Username', 'required');
-			$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
+		$title['mypage']="LEARNING SYSTEM";
+		$this->load->view('template/header',$title);
+		$this->load->view('Learning/try');
+		$this->load->view('template/footer');
+
+	}
+
+
+	public function login()
+	{
+
+			$this->form_validation->set_rules('username', 'Username', 'required',array('required'=>'You must provide a valid username'));
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]',array('required'=>'You must provide a valid password'));
 
 			if ($this->form_validation->run()== TRUE){
 
@@ -103,7 +112,7 @@ class Learning extends CI_Controller {
 
 			$title['mypage']="Learning Resource Platform";
 			$this->load->view('template/header',$title);
-			$this->load->view('Learning/Login');
+			$this->load->view('Learning/login');
 			$this->load->view('template/footer');
 
 	}

@@ -1,93 +1,70 @@
-
-<link href ="<?php echo base_url('assets/css/bootstrap.min.css') ?>"  rel="stylesheet");  >
-<link href ="<?php echo base_url('assets/css/main.css') ?>"  rel="stylesheet");  >
+<div class="body-container">
 
 
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container-fluid">
-   <div class="navbar-header">
-     <a class="navbar-brand" href="">Learning Resource Platform</a>
-   </div>
+    <div class="lrp_login">
+    	<h3 class="lrp_title">Login or <a class="lrp_signup" href="#">Sign up</a></h3>
+		<div class="row lrp_socialButtons">
+      <div class="col-sm-3"></div>
+    	    <div class="col-xs-6 col-sm-3 text-center">
+		        <a href="#" class="btn btn-lg btn-block lrp_btn-facebook">
+			        <i class="fa fa-facebook visible-xs"></i>
+			        <span class="hidden-xs">Facebook</span>
+		        </a>
+	        </div>
 
-  </div>
-</nav>
+        	<div class="col-xs-6 col-sm-3 text-center">
+		        <a href="#" class="btn btn-lg btn-block lrp_btn-google">
+			        <i class="fa fa-google-plus visible-xs"></i>
+			        <span class="hidden-xs">Google</span>
+		        </a>
+	        </div>
+          <div class="col-sm-3"></div>
+		</div>
 
+		<div class="row lrp_loginOr">
+      <div class="col-sm-3"></div>
+			<div class="col-xs-12 col-sm-6">
+				<hr class="lrp_hrOr">
+				<span class="lrp_spanOr">or</span>
+			</div>
+      <div class="col-sm-3"></div>
+		</div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-3  col-md-3 col-lg-3">
-            <img src= "<?php echo base_url('assets/images/logo.png'); ?>" alt= "TUP Logo" class="center-block"></img>
-          </div>
-          <div class="col-xs-12 col-sm-5 col-md-6 col-lg-7">
-            <h2>Technological University of The Philippines</h2>
-          </div>
-    </div>
+		<div class="row">
+      <div class="col-sm-3"></div>
+			   <div class="col-xs-12 col-sm-6">
+			        <form class="lrp_loginForm" action="" autocomplete="off" method="POST">
+					           <div class="input-group">
+						                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
+						                       <input type="text" class="form-control" name="username" placeholder="Email address">
+					           </div>
 
+					           <div class="input-group">
+						                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						                       <input  type="password" class="form-control" name="password" placeholder="Password">
+					           </div>
 
-<hr class="style-one"> </hr>
+					           <button class="btn btn-lg btn-primary btn-block lrp_button" type="submit">Login</button>
 
-  <div class="container">
-  <div class="row">
-      <div class ="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+				      </form>
+			   </div>
+      <div class="col-sm-3"></div>
+    	</div>
 
-    <div class="maintext">
+		<div class="row lrp_row-sm-offset-12">
+      <div class="col-sm-3"></div>
+			<div class="col-sm-3 text-center">
+				<label class="checkbox">
+					<input type="checkbox" value="remember-me">Remember Me
+				</label>
+			</div>
+			<div class="col-sm-3 text-center">
+				<p>
+					<a class="lrp_forgotPwd" href="#">Forgot password?</a>
+				</p>
+			</div>
+      <div class="col-sm-3"></div>
+		</div>
+	</div>
 
-    <h1> Learning
-    <br> Resource
-    <br> Platform  </h1>
-    </div>
-  </div>
-    <div class="main">
-
-
-
-      <h3>Log In to your Account Using</h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block ">Google</a>
-        </div>
-      </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
-
-      <form role="form" method="post">
-
-        <?php if(isset($_SESSION['Success'])){ ?>
-          <div class ="alert alert-success"> <?php echo $_SESSION ['Success']; ?> </div>
-          <?php
-        } ?>
-          <?php echo validation_errors('<div class ="alert alert-danger">', '</div>'); ?>
-
-        <div class="form-group">
-          <label for="inputUsernameEmail">Username or email</label>
-          <input type="text" class="form-control" id="username" name="username">
-
-        </div>
-
-        <div class="form-group">
-          <a class="pull-right" href="#">Forgot password?</a>
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="password" name="password">
-        </div>
-
-        <div class="checkbox pull-right">
-          <label>
-            <input type="checkbox">
-            Remember me </label>
-        </div>
-
-          <button name="login" class="btn btn btn-primary">
-            Log In
-          </button>
-      </form>
-
-    </div>
-
-  </div>
-</div>
 </div>

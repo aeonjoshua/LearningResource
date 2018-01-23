@@ -1,6 +1,0 @@
-<html>
-<head>
-<style></style>
-<title>LEARNING</title>
-</head>
-<body>
