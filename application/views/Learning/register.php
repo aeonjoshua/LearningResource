@@ -10,9 +10,9 @@
 
 
     <div class="register-container">
-      <div class="row">
-        <div class="col-sm-3"></div>
-        <div class="col-sm-6">
+      <div class="row register">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
       <div class="form-group">
           <label class="register-text" for="username" > Username </label>
           <input class="form-control" type="text" id = "username" name = "username" placeholder="Username">
@@ -41,7 +41,7 @@
           <button class ="btn btn-primary register-button" name = "register"> Register </button>
       </div>
     </div>
-      <div class="col-sm-3"></div>
+      <div class="col-sm-4"></div>
     </div>
 
     </div>

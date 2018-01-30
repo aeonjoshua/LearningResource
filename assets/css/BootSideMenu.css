@@ -12,6 +12,12 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
+.icons {
+    left:'fa fa-arrow-left',
+    right:'fa fa-arrow-right',
+    down:'fa fa-arrow-down'
+}
+
 .bootsidemenu > .menu-wrapper {
     padding: 0;
     position: absolute;

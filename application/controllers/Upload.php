@@ -73,7 +73,8 @@
         */
 
 //kukunin yung title at path ng file tapos insert sa db
-        $this->learning_model->insert_data($projtitle, $upload_data['full_path'], $course, $upload_data['file_name']);
+        $newpath = end((explode("ci/", $upload_data['full_path'])));
+        $this->learning_model->insert_data($projtitle, $newpath, $course, $upload_data['file_name']);
 
         $data = array('upload_data' => $this->upload->data());
 

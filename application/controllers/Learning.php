@@ -12,16 +12,6 @@ class Learning extends CI_Controller {
 	}
 
 
-	public function index()
-	{
-			$title['mypage']="LEARNING SYSTEM";
-			$this->load->view('template/header',$title);
-			$this->load->view('Learning/try');
-			$this->load->view('template/footer');
-	}
-
-
-
 		public function register()
 		{
 				if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -43,7 +33,7 @@ class Learning extends CI_Controller {
 
 
 		}
-		$title['mypage']="LEARNING SYSTEM";
+		$title['mypage']="Learning Resource Platform";
 		$this->load->view('template/header',$title);
 		$this->load->view('Learning/register');
 		$this->load->view('template/footer');
@@ -63,18 +53,7 @@ class Learning extends CI_Controller {
 	}
 
 
-	public function mainnn()
-	{
-
-		$title['mypage']="LEARNING SYSTEM";
-		$this->load->view('template/header',$title);
-		$this->load->view('Learning/try');
-		$this->load->view('template/footer');
-
-	}
-
-
-	public function login()
+	public function index()
 	{
 
 			$this->form_validation->set_rules('username', 'Username', 'required',array('required'=>'You must provide a valid username'));

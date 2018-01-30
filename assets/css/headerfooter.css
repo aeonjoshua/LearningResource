@@ -18,13 +18,13 @@
 }
 
 img {
-  max-width: 140px;
+  max-width: 120px;
   margin: 0px;
 }
 
 .header-text {
   color: #222;
-  font: 26px 'Roboto', Arial, Helvetica, sans-serif;
+  font: 22px 'Roboto', Arial, Helvetica, sans-serif;
   text-transform: uppercase;
 }
 
@@ -33,10 +33,7 @@ img {
   text-decoration: underline ;
 }
 
-.header-hr {
-  background-color: #cdcdcd;
-  height: 1px;
-}
+
 
 
 

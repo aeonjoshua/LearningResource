@@ -28,10 +28,10 @@ class Learning_model extends CI_Model {
 
 	public function get_projects()
 	{
-		$pdfs = array();
-		$this->db->select("title,course,filename,path,dateuploaded");
-		$this->db->from('files');
-		$query = $this->db->get();
+		//$pdfs = array();
+		//$this->db->select("title,course,filename,path,dateuploaded");
+		//$this->db->from('files');
+		//$query = $this->db->get();
 
 		/*if ($query->num_rows())
 		{
@@ -77,5 +77,51 @@ class Learning_model extends CI_Model {
 		$this->db->delete($this->table);
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>

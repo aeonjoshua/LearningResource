@@ -24,8 +24,13 @@ public function profile()
   $title['mypage']="Learning Resource Platform";
   $this->load->view('template/header',$title);
   $this->load->view('Learning/profile',$data);
+  $this->load->view('template/footer');
 
 }
+
+
+
+
 
 
 

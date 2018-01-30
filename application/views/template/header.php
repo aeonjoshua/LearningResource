@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+    <title><?= $mypage ?></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-	   <meta http-equiv="no-cache">
+	  <meta http-equiv="no-cache">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/headerfooter.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/try.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/login.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/register.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/upload.css'); ?>">
