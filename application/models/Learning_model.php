@@ -78,6 +78,45 @@ class Learning_model extends CI_Model {
 
 	}
 
+	public function count_actor(){
+
+		return $this->db->count_all('files');
+
+	}
+
+	public function fetch_actor($limit,$offset){
+
+		$this->db->limit($limit,$offset);
+		$query = $this->db->get('files');
+
+			if ($query->num_rows() > 0) {
+
+			return $query -> result();
+
+		} else {
+			return $query-> result();
+		}
+	}
+
+	public function search_title($title){
+
+			$this->db->select("*");
+			$this->db->from("files");
+			$this->db->like("title", $title);
+			$query = $this->db->get();
+
+			if($query->num_rows() > 0 ){
+				return $query->result();
+
+			} else {
+
+				return $query->result();
+
+			}
+
+
+	}
+
 
 
 

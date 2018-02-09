@@ -153,15 +153,64 @@ class Learning extends CI_Controller {
 
 
 			public function search()
-	{
-			$title['mypage']="search";
-			$this->load->view('template/header',$title);
-			$this->load->view('Learning/List', $data);
-			$user = $this->input->post('search');
-			$data['user']=$this->add->read($user);
-			$this->load->view('template/footer');
-			print_r($data);
 
+	{
+
+			$title['mypage']="Search";
+			$this->load->library('pagination');
+			$this->load->model('Learning_model');
+			$config = array();
+			$config ['base_url'] = base_url().'Learning/search';
+			$config ['total_rows'] = $this->Learning_model->count_actor();
+			$config['per_page'] = 5;
+			$config['num_links'] = 2;
+
+
+			//$config['full_tag_open'] = "<ul class = 'pagination'>";
+			//$config['full_tag_close'] = "</ul>";
+			//$config['num_tag_open'] = '<li>';
+			//$config['num_tag_close'] = '</li>';
+			//$config['cur_tag_open'] = "<li class ='disabled'> <li class = 'active'> <a href='#'> ";
+			//$config['cur_tag_close'] = "<span class = 'sr-only'> </span> </a> </li>";
+			//$config['next_tag_open'] = "<li>";
+			//$config['next_tagl_close'] = "</li>";
+			//$config['prev_tag_open'] = "<li>";
+			//$config['prev_tagl_close'] = "</li>" ;
+			//$config['first_tag_open'] = "<li>";
+			//$config['first_tagl_close'] = "</li>";
+			//$config['last_tag_open'] = "<li>";
+			//$config['last_tagl_close'] = "</li>";
+
+
+			$this->pagination->initialize($config);
+			$data['actor'] = $this->Learning_model->fetch_actor($config['per_page'],$this->uri->segment(3));
+			$data['links'] = $this->pagination->create_links();
+
+
+
+
+			$this->load->view('template/header',$title);
+			$this->load->view('Learning/actor_lists' , $data);
+			$this->load->view('template/footer');
+
+	}
+
+	  public function search_title(){
+
+		$this->load->model("Learning_model");
+		$title = $this->input->post('search');
+
+		if(isset($title) and !empty($title)){
+
+			$data['actor'] = $this->Learning_model->search_title($title);
+			$data['links'] = '';
+			$this->load->view('template/header');
+			$this->load->view('Learning/actor_lists' , $data);
+			$this->load->view('template/footer');
+
+		} else {
+			redirect($this->search());
+		}
 	}
 
 

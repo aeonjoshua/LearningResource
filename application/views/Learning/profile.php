@@ -58,7 +58,7 @@
 
       <h1> Search </h1>
 
-      <form class = "form-inline" role = "form" action="<?php echo base_url().'user/search_actor'; ?> " method= "post">
+      <form class = "form-inline" role = "form" action="<?php echo base_url().'Learning/search_title'; ?> " method= "post">
         <div class = "form-group">
             <input type = "text" class="form-control" name = "search" id = "firstname" placeholder = "Search here.">
         </div>
@@ -75,14 +75,25 @@
             </tr>
           </thead>
       <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+      </tbody>
   </table>
 
 
-    <table style = "width: 1000px;" class = "table table-striped">
+    <table style = "width: 978px;" class = "table table-striped">
+
+
     <?php
       foreach ($ms as $projects ) {
-       echo '<tr><td>'.$projects['title'].'</td><td>'.$projects['course'].'</td><td>'.$projects['dateuploaded'].'</td>'.'<td><button type ="button" name="View" class = "btn btn-info"> View </button></tr></h6>';
+
+       echo '<tr><td>'.$projects['title'].'</td><td>'.$projects['course'].'</td><td>'.$projects['dateuploaded'].'</td>'.'<td><button type ="button" name="View" class = "btn btn-info"> View </button></tr>';
     }
+
     ?>
   </table>
     </div>

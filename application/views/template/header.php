@@ -11,6 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/headerfooter.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/login.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/register.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/upload.css'); ?>">
