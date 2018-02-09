@@ -3,18 +3,18 @@
   {
 
     public function __construct() {
-
           parent::__construct();
 
           if ($_SESSION['user_logged'] == FALSE) {
           $this->session->set_flashdata("error","Please login first.");
-          redirect("Learning/login");
-
+          redirect("");
+          
         }
     }
 
 
     public function index()
+
     {
       $this->load->helper('form');
 
@@ -38,6 +38,7 @@
   //    $ext = end((explode(".", $name)));
       $projtitle = $this->input->post('projtitle');
       $course = $this->input->post('course');
+
 
 //check kung pdf ba yung file, balik sa upload page kapag hindi
       if(!$this->upload->do_upload())
@@ -74,7 +75,7 @@
 
 //kukunin yung title at path ng file tapos insert sa db
         $newpath = end((explode("ci/", $upload_data['full_path'])));
-        $this->learning_model->insert_data($projtitle, $newpath, $course, $upload_data['file_name']);
+        $this->learning_model->insert_data($projtitle, $newpath, $course, $upload_data['file_name'],$_SESSION ['username']);
 
         $data = array('upload_data' => $this->upload->data());
 

@@ -1,9 +1,24 @@
+
+
+<?php
+
+
+if (isset($_SESSION['username'])){
+    echo ('punyeta');
+		redirect('user/profile');
+	}
+  ?>
+
+
 <form method ="POST" action = "">
+
 
 
     <?php if(isset($_SESSION['Success'])){ ?>
       <div class ="alert alert-success"> <?php echo $_SESSION ['Success']; ?> </div>
+
       <?php
+
     } ?>
 
     <div class="login-container">

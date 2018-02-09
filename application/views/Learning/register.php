@@ -1,4 +1,13 @@
 
+<?php
+
+
+if (isset($_SESSION['username'])){
+    echo ('punyeta');
+		redirect('user/profile');
+	}
+  ?>
+
 <form method="post" action="<?php echo base_url('Learning/register'); ?>">
 
 
@@ -27,7 +36,7 @@
 
       <div class="form-group">
           <label class="register-text" for="password" > Password </label>
-          <input class="form-control" type="password" id = "password" name = "assword" placeholder="Password">
+          <input class="form-control" type="password" id = "password" name = "password" placeholder="Password">
           <?php echo form_error('password','<div class ="alert alert-danger">', '</div>'); ?>
       </div>
 

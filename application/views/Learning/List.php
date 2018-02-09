@@ -15,6 +15,7 @@
 <tbody>
 
 <?php
+
 foreach($user as $s){
 echo '  <tr>
 		<td>'.$s['fname'].'</td>

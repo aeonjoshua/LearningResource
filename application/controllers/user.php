@@ -10,7 +10,7 @@ class user extends CI_Controller
         $this->load->model('learning_model','love');
         if ($_SESSION['user_logged'] == FALSE) {
         $this->session->set_flashdata("error","Please login first.");
-        redirect("Learning/login");
+        redirect("");
 
       }
   }
@@ -27,11 +27,6 @@ public function profile()
   $this->load->view('template/footer');
 
 }
-
-
-
-
-
 
 
 

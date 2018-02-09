@@ -12,14 +12,15 @@ class Learning_model extends CI_Model {
 		return $query->result_array();
 	}
 
-	public function insert_data($name, $path_name, $course, $filename)
+	public function insert_data($name, $path_name, $course, $filename, $username)
 	{
 		$data = array(
 								'title' => $name,
 								'path'  => $path_name,
 								'course' => $course,
-								'filename' => $filename
-							 );
+								'filename' => $filename,
+								'uploader' => $_SESSION ['username']
+							 		);
 
 		$this->db->insert('files', $data);
 
@@ -54,7 +55,6 @@ class Learning_model extends CI_Model {
 
 	}
 	public function read($condition=null) {
-
 	if(isset($condition))
 		{
 		$this->db->like('fname',$condition);
@@ -77,22 +77,6 @@ class Learning_model extends CI_Model {
 		$this->db->delete($this->table);
 
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

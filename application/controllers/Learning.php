@@ -21,11 +21,13 @@ class Learning extends CI_Controller {
 					$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]');
 					$this->form_validation->set_rules('password2', 'Confirm Password', 'required|min_length[4]|matches[password]');
 
+					$hash = password_hash($_POST['password'], PASSWORD_BCRYPT);
+
 
 					if ($this->form_validation->run()== TRUE){
 						echo 'Form Validated';
-
-						$data = array ('username'=>$_POST['username'], 'email'=>$_POST['email'], 'password'=>$_POST['password'], 'created_date' => date ('Y-m-d'));
+						// $this->input->set_userdata($user);
+						$user = array ('username'=>$_POST['username'], 'email'=>$_POST['email'], 'password'=>$hash, 'created_date' => date ('Y-m-d'));
 						$this->db->insert('users',$data);
 						$this->session->set_flashdata("Success","Your account has been Registered.");
 						redirect("Learning/register", "refresh");
@@ -49,40 +51,57 @@ class Learning extends CI_Controller {
 		unset($_SESSION);
 		session_destroy();
 		$this->session->set_flashdata("Error", "Successfully Logged Out.");
-		redirect ("Learning/login","refresh");
+		redirect ("","refresh");
+
 	}
 
 
 	public function index()
+
 	{
+
+
 
 			$this->form_validation->set_rules('username', 'Username', 'required',array('required'=>'You must provide a valid username'));
 			$this->form_validation->set_rules('password', 'Password', 'required|min_length[4]',array('required'=>'You must provide a valid password'));
 
+
 			if ($this->form_validation->run()== TRUE){
+
+
+
 
 				$username = $_POST['username'];
 				$password = $_POST['password'];
 
 				$this->db->select("*");
 				$this->db->from("users");
-				$this->db->where(array('username'=>$username , 'password'=> $password ));
+				$this->db->where(array('username'=>$username, 'password'=> $password ));
 				$query = $this->db->get();
 				$num = $query->num_rows();
 				$user =$query->row();
 
+
+
 				if ($num>0){
 
-
+		//		 if(password_verify($password, $_SESSION['data'])) {
 
 					$_SESSION['user_logged']=TRUE;
 					$_SESSION['username'] = $user->username;
 					$this->session->set_flashdata("Success", "You are now logged in");
 					redirect('user/profile','refresh');
 
-				} else {
+
+//				}
+			}
+
+
+
+
+				 else {
 					$this->session->set_flashdata("Error", "No such user exist in database");
-					redirect("Learning/login");
+					redirect("");
 
 				}
 
@@ -103,8 +122,8 @@ class Learning extends CI_Controller {
 		if($_SERVER['REQUEST_METHOD']=='POST'){
 
 			$data=array('fname'=>$this->input->post('fname'),
-		'mname'=>$this->input->post('mname'),
-		'lname'=>$this->input->post('lname'));
+			'mname'=>$this->input->post('mname'),
+			'lname'=>$this->input->post('lname'));
 			$this->add->add($data);
 			redirect('Learning');
 		}
@@ -132,13 +151,14 @@ class Learning extends CI_Controller {
 			redirect('Learning/mylist','refresh');
 	}
 
+
 			public function search()
 	{
 			$title['mypage']="search";
-			$user=$this->input->post('search');
-			$data['user']=$this->add->read($user);
 			$this->load->view('template/header',$title);
-			$this->load->view('Learning/List',$data);
+			$this->load->view('Learning/List', $data);
+			$user = $this->input->post('search');
+			$data['user']=$this->add->read($user);
 			$this->load->view('template/footer');
 			print_r($data);
 

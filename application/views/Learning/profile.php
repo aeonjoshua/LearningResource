@@ -10,13 +10,15 @@
       <?php
     } ?>
 
+
     <div class="profile-container">
-      <div
-    Hello, <?php echo $_SESSION ['username'];  ?>
+      <div>
+            Hello, <?php echo $_SESSION ['username'];  ?>
+      </div>
 
-    <br><br>
+<br>
 
-    <a href ="<?php echo base_url(); ?>Learning/logout"> Logout </a>
+    <a href ="<?php echo base_url(); ?>learning/logout"> Logout </a>
 
     <br> <br>
 
@@ -33,7 +35,6 @@
 //}
 ?>
 !-->
-
 
 
 
@@ -70,16 +71,17 @@
               <th> Title </th>
               <th> Course </th>
               <th> Date Uploaded </th>
+              <th> Actions </th>
             </tr>
           </thead>
       <tbody>
   </table>
 
 
-    <table style = "width: 978px;" class = "table table-striped">
+    <table style = "width: 1000px;" class = "table table-striped">
     <?php
       foreach ($ms as $projects ) {
-       echo '<tr><td>'.$projects['title'].'</td><td>'.$projects['course'].'</td><td>'.$projects['dateuploaded'].'</td></tr></h6>';
+       echo '<tr><td>'.$projects['title'].'</td><td>'.$projects['course'].'</td><td>'.$projects['dateuploaded'].'</td>'.'<td><button type ="button" name="View" class = "btn btn-info"> View </button></tr></h6>';
     }
     ?>
   </table>
